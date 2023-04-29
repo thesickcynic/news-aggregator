@@ -17,7 +17,6 @@ global.userDatabase = [{
 
 var register = (req, res) => {
     const userInfo = req.body;
-    console.log(userInfo);
     const validatorResponse = Validator.validateNewUserInfo(userInfo, userDatabase);
     const validatorStatus = validatorResponse.status;
     const validatorMessage = validatorResponse.response_message;
@@ -45,7 +44,6 @@ var login = (req, res) => {
     const userEmail = userInfo.email;
      const userPassword = userInfo.password;
      const userIndex = userDatabase.findIndex(user => user.email === userEmail);
-     console.log(userIndex);
      if(userIndex != -1) {
         const passwordIsValid = bcrypt.compareSync(userPassword, userDatabase[userIndex].password);
         console.log("Came here");

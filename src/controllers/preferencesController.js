@@ -3,7 +3,6 @@ const verifyToken = require('../middleware/authorizeJWT')
 const Validator = require('../utils/userInfoValidator');
 const bodyParser = require('body-parser');
 
-
 preferencesRoute.use(bodyParser.urlencoded({ extended: false }));
 preferencesRoute.use(bodyParser.json());
 
